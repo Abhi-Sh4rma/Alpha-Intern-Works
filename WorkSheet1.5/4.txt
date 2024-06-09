@@ -1,0 +1,252 @@
+What is an outliers and write the mathematcal formula to fnd the outliers.
+
+Ans:- An outlier is a data point that differs significantly from other observations in a dataset. Outliers can occur due to variability in the data, measurement errors, or experimental errors. They can influence the results of statistical analyses and machine learning models, making it essential to detect and handle them appropriately.
+
+Mathematical Formula to Find Outliers
+One common method to detect outliers is using the Interquartile Range (IQR). The IQR is the range between the first quartile (Q1) and the third quartile (Q3) of the dataset. Outliers are typically defined as data points that fall below 
+𝑄
+1
+−
+1.5
+×
+𝐼
+𝑄
+𝑅
+Q1−1.5×IQR or above 
+𝑄
+3
++
+1.5
+×
+𝐼
+𝑄
+𝑅
+Q3+1.5×IQR.
+
+Steps to Find Outliers Using IQR:
+Calculate the First Quartile (Q1):
+
+Q1 is the median of the first half of the data.
+Calculate the Third Quartile (Q3):
+
+Q3 is the median of the second half of the data.
+Compute the Interquartile Range (IQR):
+
+𝐼
+𝑄
+𝑅
+=
+𝑄
+3
+−
+𝑄
+1
+IQR=Q3−Q1
+Determine the Lower and Upper Bound:
+
+Lower Bound: 
+𝑄
+1
+−
+1.5
+×
+𝐼
+𝑄
+𝑅
+Q1−1.5×IQR
+Upper Bound: 
+𝑄
+3
++
+1.5
+×
+𝐼
+𝑄
+𝑅
+Q3+1.5×IQR
+Identify Outliers:
+
+Any data point less than the Lower Bound or greater than the Upper Bound is considered an outlier.
+Mathematical Formulas:
+𝑄
+1
+=
+First Quartile
+Q1=First Quartile
+
+𝑄
+3
+=
+Third Quartile
+Q3=Third Quartile
+
+𝐼
+𝑄
+𝑅
+=
+𝑄
+3
+−
+𝑄
+1
+IQR=Q3−Q1
+
+Lower Bound
+=
+𝑄
+1
+−
+1.5
+×
+𝐼
+𝑄
+𝑅
+Lower Bound=Q1−1.5×IQR
+
+Upper Bound
+=
+𝑄
+3
++
+1.5
+×
+𝐼
+𝑄
+𝑅
+Upper Bound=Q3+1.5×IQR
+Example:
+Suppose we have the following dataset:
+
+[
+7
+,
+7
+,
+7
+,
+7
+,
+7
+,
+8
+,
+8
+,
+9
+,
+10
+,
+10
+,
+10
+,
+11
+,
+11
+,
+11
+,
+12
+,
+12
+,
+13
+,
+14
+,
+15
+,
+16
+]
+[7,7,7,7,7,8,8,9,10,10,10,11,11,11,12,12,13,14,15,16]
+
+Calculate Q1 and Q3:
+
+Q1: 25th percentile (7.75)
+Q3: 75th percentile (12.25)
+Compute IQR:
+
+𝐼
+𝑄
+𝑅
+=
+12.25
+−
+7.75
+=
+4.5
+IQR=12.25−7.75=4.5
+Determine the Lower and Upper Bound:
+
+Lower Bound
+=
+7.75
+−
+1.5
+×
+4.5
+=
+0.0
+Lower Bound=7.75−1.5×4.5=0.0
+
+Upper Bound
+=
+12.25
++
+1.5
+×
+4.5
+=
+20.0
+Upper Bound=12.25+1.5×4.5=20.0
+Identify Outliers:
+
+No data points fall below 0.0 or above 20.0 in this dataset, so there are no outliers.
+Other Methods to Detect Outliers
+Z-Score:
+
+Data points with a Z-score (standard score) greater than 3 or less than -3 are typically considered outliers.
+𝑍
+=
+(
+𝑋
+−
+𝜇
+)
+𝜎
+Z= 
+σ
+(X−μ)
+​
+ 
+where 
+𝑋
+X is the data point, 
+𝜇
+μ is the mean, and 
+𝜎
+σ is the standard deviation.
+
+Modified Z-Score:
+
+For smaller datasets, a modified Z-score using the median and median absolute deviation (MAD) can be used. A common threshold is 3.5.
+𝑍
+=
+0.6745
+×
+(
+𝑋
+𝑖
+−
+median
+)
+MAD
+Z=0.6745× 
+MAD
+(X 
+i
+​
+ −median)
+​
+ 
+Outlier detection is crucial for data preprocessing as it ensures the quality and reliability of the data analysis and machine learning models.
